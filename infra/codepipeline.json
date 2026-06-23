@@ -1,4 +1,4 @@
-```json
+
 {
   "pipeline": {
     "name": "data-pipeline-etl-cd",
@@ -90,4 +90,4 @@
     "version": 1
   }
 }
-```
+
