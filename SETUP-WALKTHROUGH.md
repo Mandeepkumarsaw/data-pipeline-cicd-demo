@@ -1,4 +1,4 @@
-# CI/CD Setup Walkthrough
+# CI/CD Setup Walkthrough..
 
 Deploy this ETL Lambda pipeline with **GitHub Actions (CI)** + **AWS CodePipeline (CD)**.
 
