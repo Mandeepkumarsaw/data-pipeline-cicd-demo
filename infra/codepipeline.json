@@ -1,8 +1,8 @@
+```json
 {
   "pipeline": {
     "name": "data-pipeline-etl-cd",
     "roleArn": "arn:aws:iam::667198667792:role/data-pipeline-codepipeline-role",
-    "pipelineType": "V2",
     "artifactStore": {
       "type": "S3",
       "location": "data-pipeline-artifacts-667198667792"
@@ -76,8 +76,7 @@
             "runOrder": 1,
             "configuration": {
               "FunctionName": "etl-customer-lambda",
-              "FunctionAlias": "prod",
-              "DeployStrategy": "AllAtOnce"
+              "UserParameters": ""
             },
             "inputArtifacts": [
               {
@@ -87,6 +86,8 @@
           }
         ]
       }
-    ]
+    ],
+    "version": 1
   }
 }
+```
