@@ -1,11 +1,11 @@
 {
   "pipeline": {
     "name": "data-pipeline-etl-cd",
-    "roleArn": "arn:aws:iam::__AWS_ACCOUNT_ID__:role/data-pipeline-codepipeline-role",
+    "roleArn": "arn:aws:iam::667198667792:role/data-pipeline-codepipeline-role",
     "pipelineType": "V2",
     "artifactStore": {
       "type": "S3",
-      "location": "__ARTIFACT_BUCKET__"
+      "location": "data-pipeline-artifacts-667198667792"
     },
     "stages": [
       {
@@ -21,8 +21,8 @@
             },
             "runOrder": 1,
             "configuration": {
-              "ConnectionArn": "__CONNECTION_ARN__",
-              "FullRepositoryId": "__GITHUB_USER__/__REPO_NAME__",
+              "ConnectionArn": "arn:aws:codeconnections:eu-north-1:667198667792:connection/21d3a5b8-fe98-41e1-9ac7-4a430fcbdfdb",
+              "FullRepositoryId": "Mandeepkumarsaw/data-pipeline-cicd-demo",
               "BranchName": "main",
               "OutputArtifactFormat": "CODE_ZIP"
             },
@@ -75,7 +75,7 @@
             },
             "runOrder": 1,
             "configuration": {
-              "FunctionName": "__LAMBDA_NAME__",
+              "FunctionName": "etl-customer-lambda",
               "FunctionAlias": "prod",
               "DeployStrategy": "AllAtOnce"
             },

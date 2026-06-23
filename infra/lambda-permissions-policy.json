@@ -9,11 +9,11 @@
         "s3:ListBucket"
       ],
       "Resource": [
-        "arn:aws:s3:::YOUR_S3_BUCKET",
-        "arn:aws:s3:::YOUR_S3_BUCKET/*"
+        "arn:aws:s3:::data-pipeline-artifacts-667198667792",
+        "arn:aws:s3:::data-pipeline-artifacts-667198667792/*"
       ]
     },
-    {
+   {
       "Sid": "WriteRecordsToDynamoDb",
       "Effect": "Allow",
       "Action": [
@@ -21,7 +21,7 @@
         "dynamodb:BatchWriteItem",
         "dynamodb:DescribeTable"
       ],
-      "Resource": "arn:aws:dynamodb:__AWS_REGION__:__AWS_ACCOUNT_ID__:table/YOUR_DYNAMODB_TABLE"
+      "Resource": "arn:aws:dynamodb:ap-southeast-2:667198667792:table/customer-data"
     },
     {
       "Sid": "LambdaBasicExecution",
@@ -31,7 +31,7 @@
         "logs:CreateLogStream",
         "logs:PutLogEvents"
       ],
-      "Resource": "arn:aws:logs:__AWS_REGION__:__AWS_ACCOUNT_ID__:*"
+      "Resource": "arn:aws:logs:eu-north-1:667198667792:*"
     }
   ]
 }

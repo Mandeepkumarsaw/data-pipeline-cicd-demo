@@ -11,8 +11,8 @@
         "s3:ListBucket"
       ],
       "Resource": [
-        "arn:aws:s3:::__ARTIFACT_BUCKET__",
-        "arn:aws:s3:::__ARTIFACT_BUCKET__/*"
+        "arn:aws:s3:::data-pipeline-artifacts-667198667792",
+        "arn:aws:s3:::data-pipeline-artifacts-667198667792/*"
       ]
     },
     {
@@ -21,12 +21,12 @@
         "codebuild:BatchGetBuilds",
         "codebuild:StartBuild"
       ],
-      "Resource": "arn:aws:codebuild:__AWS_REGION__:__AWS_ACCOUNT_ID__:project/etl-customer-build"
+      "Resource": "arn:aws:codebuild:eu-north-1:667198667792:project/etl-customer-build"
     },
     {
       "Effect": "Allow",
       "Action": "codestar-connections:UseConnection",
-      "Resource": "__CONNECTION_ARN__"
+      "Resource": "arn:aws:codeconnections:eu-north-1:667198667792:connection/21d3a5b8-fe98-41e1-9ac7-4a430fcbdfdb"
     },
     {
       "Effect": "Allow",
@@ -39,8 +39,8 @@
         "lambda:GetFunctionConfiguration"
       ],
       "Resource": [
-        "arn:aws:lambda:__AWS_REGION__:__AWS_ACCOUNT_ID__:function:__LAMBDA_NAME__",
-        "arn:aws:lambda:__AWS_REGION__:__AWS_ACCOUNT_ID__:function:__LAMBDA_NAME__:*"
+        "arn:aws:lambda:eu-north-1:667198667792:function:etl-customer-lambda",
+        "arn:aws:lambda:eu-north-1:667198667792:function:etl-customer-lambda:*"
       ]
     },
     {
@@ -51,8 +51,8 @@
         "logs:PutLogEvents"
       ],
       "Resource": [
-        "arn:aws:logs:__AWS_REGION__:__AWS_ACCOUNT_ID__:log-group:/aws/codepipeline/data-pipeline-etl-cd",
-        "arn:aws:logs:__AWS_REGION__:__AWS_ACCOUNT_ID__:log-group:/aws/codepipeline/data-pipeline-etl-cd:log-stream:*"
+        "arn:aws:logs:eu-north-1:667198667792:log-group:/aws/codepipeline/data-pipeline-etl-cd",
+        "arn:aws:logs:eu-north-1:667198667792:log-group:/aws/codepipeline/data-pipeline-etl-cd:log-stream:*"
       ]
     }
   ]

@@ -15,5 +15,5 @@
     "privilegedMode": false,
     "imagePullCredentialsType": "CODEBUILD"
   },
-  "serviceRole": "arn:aws:iam::__AWS_ACCOUNT_ID__:role/data-pipeline-codebuild-role"
+  "serviceRole": "arn:aws:iam::667198667792:role/data-pipeline-codebuild-role"
 }
