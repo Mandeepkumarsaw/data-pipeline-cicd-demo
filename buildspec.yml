@@ -14,13 +14,19 @@ phases:
       - flake8 lambda tests --max-line-length=100 --exclude=__pycache__
       - pytest tests/ -v
 
+  # build:
+  #   commands:
+  #     - echo "Packaging Lambda..."
+  #     - cd lambda/etl_customer
+  #     - zip -r function.zip .
+  #     - mv function.zip ../../
+
   build:
-    commands:
-      - echo "Packaging Lambda..."
-      - cd lambda/etl_customer
-      - zip -r function.zip .
-      - mv function.zip ../../
+  commands:
+    - echo "Packaging Lambda..."
+    - cd lambda/etl_customer
+    - zip -r function.zip .    
 
 artifacts:
   files:
-    - function.zip
+    - lambda/etl_customer/function.zip
