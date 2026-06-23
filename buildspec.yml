@@ -1,4 +1,4 @@
-version: 0.2  #commit
+version: 0.2
 
 phases:
   install:
@@ -10,18 +10,17 @@ phases:
 
   pre_build:
     commands:
-      - echo "Running CI checks inside CodePipeline..."
+      - echo "Running tests..."
       - flake8 lambda tests --max-line-length=100 --exclude=__pycache__
       - pytest tests/ -v
 
   build:
     commands:
-      - echo "Packaging Lambda deployment artifact..."
+      - echo "Packaging Lambda..."
       - cd lambda/etl_customer
-      - zip -r ../../function.zip .
-      - cd ../..
+      - zip -r function.zip .
+      - mv function.zip ../../
 
 artifacts:
   files:
     - function.zip
-  name: etl-customer-artifact
