@@ -75,8 +75,7 @@
             },
             "runOrder": 1,
             "configuration": {
-              "FunctionName": "etl-customer-lambda",
-              "UserParameters": ""
+              "FunctionName": "etl-customer-lambda"
             },
             "inputArtifacts": [
               {
