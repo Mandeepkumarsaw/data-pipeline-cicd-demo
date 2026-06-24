@@ -42,21 +42,24 @@ def lambda_handler(event, context):
         # Success response
         return {
             "statusCode": 200,
-            "body": json.dumps({
-                "message": "ETL completed successfully",
-                "bucket": bucket,
-                "key": key,
-                "records_written": records_written,
-                "table": DYNAMODB_TABLE
-            })
+            "body": json.dumps(
+                {
+                    "message": "ETL completed successfully",
+                    "bucket": bucket,
+                    "key": key,
+                    "records_written": records_written,
+                    "table": DYNAMODB_TABLE,
+                }
+            ),
         }
 
     except Exception as e:
         # Error response
         return {
             "statusCode": 500,
-            "body": json.dumps({
-                "error": str(e)
-            })
+            "body": json.dumps(
+                {
+                    "error": str(e)
+                }
+            ),
         }
-        
